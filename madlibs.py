@@ -31,7 +31,12 @@ class words:
         
         
         file.close()
+<<<<<<< HEAD
         
+=======
+# this is a test
+# explitive yes
+>>>>>>> 31819c880302dc6a8792b060c5fd75093e528eba
         
 if __name__ == '__main__' :
     w = words()
@@ -42,4 +47,8 @@ if __name__ == '__main__' :
 #    making a new story """
 #    def __init_(self):
 #        
+<<<<<<< HEAD
 #        
+=======
+#        
+>>>>>>> 31819c880302dc6a8792b060c5fd75093e528eba
