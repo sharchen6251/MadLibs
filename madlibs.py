@@ -32,6 +32,7 @@ class words:
         
         file.close()
 # this is a test
+# explitive yes
         
 if __name__ == '__main__' :
     w = words()
