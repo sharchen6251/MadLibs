@@ -64,18 +64,15 @@ class Madlib:
             
             elif self.dict[k] == 'adjective':               # if the value is an adjective
                 self.dict[k] = input("Enter an adjective: ")    # the value changes to the inputted adjective
+            
+            elif self.dict[k] == 'place':
+                self.dict[k] = input("Enter a place: ")
         
         
     def get_story(self):
         """ prints the story on the screen """
         
         return self.wordlist
-        
-    
-        
-        
-        
-    
                     
         
 if __name__ == '__main__' :
