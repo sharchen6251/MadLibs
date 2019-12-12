@@ -18,11 +18,15 @@ class Book():
         """ initializes the values """
         self.input = open('input.txt')
         self.pages = [Madlib(file) for file in self.input]
+        self.page = 0
+        
         
     def get_pages(self):
         return self.pages
     
-    def get_page():
+    def get_page(self):
+        """ finds out what page it is on """
+        
         
     def next_page():
         
@@ -31,13 +35,12 @@ class Book():
         
 
 if __name__ == '__main__' :
-    page = 0 # make this an instance  var of book and write a get page
     ml_book = Book()
     pages = ml_book.get_pages()
 
-    window = tk.Tk()
+    window = tk.Tk()                                                                    # creates the start window
     window.title('Madlib Book')
-    start_button = tk.Button(window, text='Start', width=25, command = window.destroy)
+    start_button = tk.Button(window, text = 'Start', width = 25, command = window.destroy)
     start_button.pack()
     window.mainloop()
     
@@ -58,7 +61,7 @@ if __name__ == '__main__' :
     frame.pack()
     top_frame = Frame(master)
     top_frame.pack(side = TOP)
-    start_button = Button(frame, text = 'Start', fg = 'black') # call replace words pages[ml_book.get_page()]
+    start_button = Button(frame, text = 'Start', fg = 'black', command = pages[ml_book.get_page()].replace_words() # call replace words pages[ml_book.get_page()]
     start_button.pack()
     bottom_frame = Frame(master)
     bottom_frame.pack(side = BOTTOM)
