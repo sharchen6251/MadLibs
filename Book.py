@@ -27,11 +27,13 @@ class Book():
     def get_page(self):
         """ finds out what page it is on """
         
+        self.replace_word().pages[ml_book.get_page()]
         
-    def next_page():
-        
-    def last_page():
-        
+#        
+#    def next_page():
+#        
+#    def last_page():
+#        
         
 
 if __name__ == '__main__' :
@@ -52,17 +54,17 @@ if __name__ == '__main__' :
     canvas_width = 2000
     y = int(canvas_height / 2)
     screen.create_line(0, y, canvas_width, y)
-    print(pages[page].get_story())
+#    print(pages[self.page].get_story())
     
-    message_var = Message(screen, text = pages[page].get_story(), width = 400)
+    message_var = Message(screen, text = pages[self.page].get_story(), width = 400)
     message_var.pack()
     
     frame = Frame(master)
     frame.pack()
     top_frame = Frame(master)
     top_frame.pack(side = TOP)
-    start_button = Button(frame, text = 'Start', fg = 'black', command = pages[ml_book.get_page()].replace_words() # call replace words pages[ml_book.get_page()]
-    start_button.pack()
+    start_button = Button(frame, text = 'Start', fg = 'black', command = lambda: master.get_page()) # call replace words pages[ml_book.get_page()]
+    start_button.pack(side = TOP)
     bottom_frame = Frame(master)
     bottom_frame.pack(side = BOTTOM)
     next_button = Button(frame, text = 'Next', fg = 'black') # next page
