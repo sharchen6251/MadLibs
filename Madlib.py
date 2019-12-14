@@ -74,12 +74,16 @@ class Madlib:
         
         return self.wordlist
                     
+    def finshStory(self):
+        """finshes story"""
+        allwords = self.readFileIntoWordList(self.story)        # gets the story
+        return self.replace_words(allwords)
         
 if __name__ == '__main__' :
-    w = Madlib()
+    w = Madlib('wedding.txt')
     w.create_dictionary()
     w.replace_words()
-    w.print_story()
+    w.get_story()
     
 #    print(w.wordlist)
     print(w.dict)
