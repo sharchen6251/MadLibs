@@ -18,26 +18,40 @@ class Book():
         """ initializes the values """
         self.input = open('input.txt')
         self.pages = [Madlib(file) for file in self.input]
+        self.page = 0
+        
         
     def get_pages(self):
         return self.pages
     
+<<<<<<< HEAD
 #    def get_page():
 #      
 #    def next_page():
 #        
 #    def last_page():
+=======
+    def get_page(self):
+        """ finds out what page it is on """
+        
+        self.replace_word().pages[ml_book.get_page()]
+        
+#        
+#    def next_page():
+#        
+#    def last_page():
+#        
+>>>>>>> d9eaf09d1b66364b50676a5204d777295c8d7023
         
           
 
 if __name__ == '__main__' :
-    page = 0 # make this an instance  var of book and write a get page
     ml_book = Book()
     pages = ml_book.get_pages()
 
-    window = tk.Tk()
+    window = tk.Tk()                                                                    # creates the start window
     window.title('Madlib Book')
-    start_button = tk.Button(window, text='Start', width=25, command = window.destroy)
+    start_button = tk.Button(window, text = 'Start', width = 25, command = window.destroy)
     start_button.pack()
     window.mainloop()
     
@@ -49,17 +63,17 @@ if __name__ == '__main__' :
     canvas_width = 2000
     y = int(canvas_height / 2)
     screen.create_line(0, y, canvas_width, y)
-    print(pages[page].get_story())
+#    print(pages[self.page].get_story())
     
-    message_var = Message(screen, text = pages[page].get_story(), width = 400)
+    message_var = Message(screen, text = pages[self.page].get_story(), width = 400)
     message_var.pack()
     
     frame = Frame(master)
     frame.pack()
     top_frame = Frame(master)
     top_frame.pack(side = TOP)
-    start_button = Button(frame, text = 'Start', fg = 'black') # call replace words pages[ml_book.get_page()]
-    start_button.pack()
+    start_button = Button(frame, text = 'Start', fg = 'black', command = lambda: master.get_page()) # call replace words pages[ml_book.get_page()]
+    start_button.pack(side = TOP)
     bottom_frame = Frame(master)
     bottom_frame.pack(side = BOTTOM)
     next_button = Button(frame, text = 'Next', fg = 'black') # next page
