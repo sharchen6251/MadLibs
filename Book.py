@@ -22,13 +22,13 @@ class Book():
     def get_pages(self):
         return self.pages
     
-    def get_page():
+#    def get_page():
+#      
+#    def next_page():
+#        
+#    def last_page():
         
-    def next_page():
-        
-    def last_page():
-        
-        
+          
 
 if __name__ == '__main__' :
     page = 0 # make this an instance  var of book and write a get page

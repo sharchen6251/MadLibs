@@ -10,4 +10,4 @@ class story(words):
     """ uses inputs from words class and adds it to the story
     making a new story """
     def __init_(self):
-        "kmmkllk"
+        

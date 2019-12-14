@@ -73,11 +73,12 @@ class Madlib:
         """ prints the story on the screen """
         
         return self.wordlist
-                    
+    
     def finshStory(self):
         """finshes story"""
-        allwords = self.readFileIntoWordList(self.story)        # gets the story
-        return self.replace_words(allwords)
+        newstory = ' '.join(str(self.dict.get(word, word)) for word in self.wordlist)
+        print(newstory)
+                
         
 if __name__ == '__main__' :
     w = Madlib('wedding.txt')

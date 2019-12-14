@@ -62,7 +62,20 @@ class words:
             elif self.dict[k] == 'adjective':               # if the value is an adjective
                 self.dict[k] = input("Enter an adjective: ")    # the value changes to the inputted adjective
         
-    
+    def completeStory(self):
+        """ inputs words into story """
+        allwords = self.readFileIntoWordList(self.story)        # gets the story
+         
+        newstory = self.replacewords(allwords)
+        
+        allwords = newstory
+        
+        return allwords
+            
+        
+            
+            
+        
                     
         
 if __name__ == '__main__' :
