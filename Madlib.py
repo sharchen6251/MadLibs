@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Created on Sun Dec 15 00:20:13 2019
+
+@author: josh
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
 Created on Sat Dec  7 16:48:42 2019
 
 @author: sharchen
@@ -62,7 +70,7 @@ class Madlib:
                 self.master.title('Enter Noun')
                 b = Button(self.master, text='okay', command = lambda:[self.get_val(k), b.destroy()])
                 b.pack(side='bottom')
-#                self.master.mainloop()
+                self.master.mainloop()
                 
             if self.dict[k] == 'number':                  # if the value is noun
                 self.master.title('Enter Number')
@@ -112,7 +120,6 @@ class Madlib:
         
         return self.wordlist
     
-<<<<<<< HEAD
     def finshStory(self):
         """finshes story"""
         blank_count = 0
@@ -129,29 +136,6 @@ if __name__ == '__main__' :
     
 #    print(w.wordlist)
     print(w.get_story())
-=======
-    def finish_story(self):
-        """finshes story"""
-        
-        blank_number = 0
-        
-        for word in range(len(self.wordlist)):                  # goes through the list of words
-            if self.wordlist[word][0] == '[':       # if it is a blank
-                blank_number += 1    # adds 1 to blank number
-                self.wordlist[word] = self.dict[str(blank_number)]
-#                if str(blank_number) in self.dict:
-#                    self.wordlist(word) = self.dict.get(str(blank_number))
-        
-if __name__ == '__main__' :
-    w = Madlib('wedding.txt')
-    w.create_dictionary()
-    w.replace_words()
-    w.finish_story()
-    w.get_story()
-    
-    print(w.wordlist)
-    print(w.dict)
->>>>>>> 71bcf3921c0f8e10afbefdb74afe4357dc0bbd33
     
      
 

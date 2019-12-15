@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Created on Sun Dec 15 00:20:14 2019
+
+@author: josh
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
 Created on Sun Dec  8 23:55:45 2019
 
 @author: sharchen
@@ -40,21 +48,7 @@ class Book():
     def get_page(self):
         """ finds out what page it is on """
         
-<<<<<<< HEAD
         return self.pages[self.page]
-=======
-        return self.page
-        
-    def next_page():
-        """ gets the next page """
-        
-        if self.page < len(self.pages):
-            self.page += 1
-        
-#        
-#    def last_page():
-#        
->>>>>>> 71bcf3921c0f8e10afbefdb74afe4357dc0bbd33
         
 
 
@@ -79,24 +73,15 @@ if __name__ == '__main__' :
     screen.create_line(0, y, canvas_width, y)
 #    print(pages[self.page].get_story())
     
-<<<<<<< HEAD
     message_var = Message(screen, text = ml_book.get_page().get_story(), width = 400)
-=======
-    message_var = Message(screen, text = pages[ml_book.get_page()].get_story(), width = 400)
->>>>>>> 71bcf3921c0f8e10afbefdb74afe4357dc0bbd33
     message_var.pack()
     
     frame = Frame(master)
     frame.pack()
     top_frame = Frame(master)
     top_frame.pack(side = TOP)
-<<<<<<< HEAD
     play_button = Button(frame, text = 'Play', width = 25, command = ml_book.get_page().replace_words) # call replace words pages[ml_book.get_page()]
     play_button.pack(side = TOP)
-=======
-    start_button = Button(frame, text = 'Start', fg = 'black', command = lambda: master.replace_words().pages[ml_book.get_page()]) # call replace words pages[ml_book.get_page()]
-    start_button.pack(side = TOP)
->>>>>>> 71bcf3921c0f8e10afbefdb74afe4357dc0bbd33
     bottom_frame = Frame(master)
     bottom_frame.pack(side = BOTTOM)
     next_button = Button(frame, text = 'Next', fg = 'black', command = ml_book.next_page) # next page
