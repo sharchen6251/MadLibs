@@ -112,6 +112,7 @@ class Madlib:
         
         return self.wordlist
     
+<<<<<<< HEAD
     def finshStory(self):
         """finshes story"""
         blank_count = 0
@@ -128,6 +129,29 @@ if __name__ == '__main__' :
     
 #    print(w.wordlist)
     print(w.get_story())
+=======
+    def finish_story(self):
+        """finshes story"""
+        
+        blank_number = 0
+        
+        for word in range(len(self.wordlist)):                  # goes through the list of words
+            if self.wordlist[word][0] == '[':       # if it is a blank
+                blank_number += 1    # adds 1 to blank number
+                self.wordlist[word] = self.dict[str(blank_number)]
+#                if str(blank_number) in self.dict:
+#                    self.wordlist(word) = self.dict.get(str(blank_number))
+        
+if __name__ == '__main__' :
+    w = Madlib('wedding.txt')
+    w.create_dictionary()
+    w.replace_words()
+    w.finish_story()
+    w.get_story()
+    
+    print(w.wordlist)
+    print(w.dict)
+>>>>>>> 71bcf3921c0f8e10afbefdb74afe4357dc0bbd33
     
      
 
