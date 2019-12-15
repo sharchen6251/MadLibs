@@ -5,7 +5,7 @@ Created on Sat Dec  7 16:48:42 2019
 
 @author: sharchen
 """
-
+import tkinter as tk
 from tkinter import *
 
 class Madlib:
@@ -15,7 +15,12 @@ class Madlib:
         self.story = filename
         self.wordlist = self.readFileIntoWordList(self.story)
         self.dict = {}
-        
+        self.create_dictionary()
+        self.master = Tk()
+        self.master.title('Name')
+        self.e = Entry(self.master)
+        self.e.pack()
+        self.e.focus_set()
         
     def readFileIntoWordList(self, filename):
         """ reads a text file and returns a list of words with punctuation removed """
@@ -53,21 +58,54 @@ class Madlib:
         """ gets the input from the user to replace blanks """
         
         for k in self.dict.keys():                          # looks at all the keys
-            if self.dict[k] == 'noun':                  # if the value is noun 
-                self.dict[k] = input("Enter a noun: ")      # the value changes to the inputted noun
+            if self.dict[k] == 'noun':                  # if the value is noun
+                self.master.title('Enter Noun')
+                b = Button(self.master, text='okay', command = lambda:[self.get_val(k), b.destroy()])
+                b.pack(side='bottom')
+#                self.master.mainloop()
                 
-            elif self.dict[k] == 'number':                  # if the value is number
-                self.dict[k] = input("Enter a number: ")    # the value changes to the inputted number
+            if self.dict[k] == 'number':                  # if the value is noun
+                self.master.title('Enter Number')
+                b = Button(self.master, text='okay', command = lambda:[self.get_val(k), b.destroy()])
+                b.pack(side='bottom')
+                self.master.mainloop()
                 
-            elif self.dict[k] == 'verb':                    # if the value is a verb
-                self.dict[k] = input("Enter a verb: ")      # the value changes to the inputted verb
-            
-            elif self.dict[k] == 'adjective':               # if the value is an adjective
-                self.dict[k] = input("Enter an adjective: ")    # the value changes to the inputted adjective
-            
-            elif self.dict[k] == 'place':
-                self.dict[k] = input("Enter a place: ")
-        
+            if self.dict[k] == 'verb':                  # if the value is noun
+                self.master.title('Enter Verb')
+                b = Button(self.master, text='okay', command = lambda:[self.get_val(k), b.destroy()])
+                b.pack(side='bottom')
+                self.master.mainloop()
+                
+            if self.dict[k] == 'adjective':                  # if the value is noun
+                self.master.title('Enter Adjective')
+                b = Button(self.master, text='okay', command = lambda:[self.get_val(k), b.destroy()])
+                b.pack(side='bottom')
+                self.master.mainloop()
+                
+            if self.dict[k] == 'place':                  # if the value is noun
+                self.master.title('Enter Place')
+                b = Button(self.master, text='okay', command = lambda:[self.get_val(k), b.destroy()])
+                b.pack(side='bottom')
+                self.master.mainloop()
+#                
+#            elif self.dict[k] == 'number':                  # if the value is number
+#                self.dict[k] = input("Enter a number: ")    # the value changes to the inputted number
+#                
+#            elif self.dict[k] == 'verb':                    # if the value is a verb
+#                self.dict[k] = input("Enter a verb: ")      # the value changes to the inputted verb
+#            
+#            elif self.dict[k] == 'adjective':               # if the value is an adjective
+#                self.dict[k] = input("Enter an adjective: ")    # the value changes to the inputted adjective
+#            
+#            elif self.dict[k] == 'place':
+#                self.dict[k] = input("Enter a place: ")
+        self.master.destroy()
+        self.finshStory()
+
+    def get_val(self, k):
+        """ takes self and k """
+        self.dict[k] = self.e.get()
+        self.e = Entry(self.master)
         
     def get_story(self):
         """ prints the story on the screen """
@@ -76,18 +114,20 @@ class Madlib:
     
     def finshStory(self):
         """finshes story"""
-        newstory = ' '.join(str(self.dict.get(word, word)) for word in self.wordlist)
-        print(newstory)
+        blank_count = 0
+        for i in range(len(self.wordlist)):
+            if self.wordlist[i][0] == '[':
+                blank_count += 1
+                self.wordlist[i] = self.dict[str(blank_count)]
+            
                 
         
 if __name__ == '__main__' :
     w = Madlib('wedding.txt')
-    w.create_dictionary()
     w.replace_words()
-    w.get_story()
     
 #    print(w.wordlist)
-    print(w.dict)
+    print(w.get_story())
     
      
 

@@ -24,26 +24,26 @@ class Book():
     def get_pages(self):
         return self.pages
     
-<<<<<<< HEAD
-#    def get_page():
-#      
-#    def next_page():
-#        
-#    def last_page():
-=======
+   
+    def next_page():
+        """ flips page forward """
+        self.page += 1
+        if self.page == len(self.pages):
+            self.page = 0
+   
+    def last_page():
+        """ flips page backward """
+        self.page -= 1
+        if self.page == -1:
+            self.page = len(self.pages - 1)
+        
     def get_page(self):
         """ finds out what page it is on """
         
-        self.replace_word().pages[ml_book.get_page()]
+        return self.pages[self.page]
         
-#        
-#    def next_page():
-#        
-#    def last_page():
-#        
->>>>>>> d9eaf09d1b66364b50676a5204d777295c8d7023
-        
-          
+
+
 
 if __name__ == '__main__' :
     ml_book = Book()
@@ -65,20 +65,20 @@ if __name__ == '__main__' :
     screen.create_line(0, y, canvas_width, y)
 #    print(pages[self.page].get_story())
     
-    message_var = Message(screen, text = pages[self.page].get_story(), width = 400)
+    message_var = Message(screen, text = ml_book.get_page().get_story(), width = 400)
     message_var.pack()
     
     frame = Frame(master)
     frame.pack()
     top_frame = Frame(master)
     top_frame.pack(side = TOP)
-    start_button = Button(frame, text = 'Start', fg = 'black', command = lambda: master.get_page()) # call replace words pages[ml_book.get_page()]
-    start_button.pack(side = TOP)
+    play_button = Button(frame, text = 'Play', width = 25, command = ml_book.get_page().replace_words) # call replace words pages[ml_book.get_page()]
+    play_button.pack(side = TOP)
     bottom_frame = Frame(master)
     bottom_frame.pack(side = BOTTOM)
-    next_button = Button(frame, text = 'Next', fg = 'black') # next page
+    next_button = Button(frame, text = 'Next', fg = 'black', command = ml_book.next_page) # next page
     next_button.pack(side = RIGHT)
-    back_button = Button(frame, text = 'Back', fg = 'black') # last page
+    back_button = Button(frame, text = 'Back', fg = 'black', command = ml_book.last_page) # last page
     back_button.pack(side = LEFT)
     master.mainloop()
 
